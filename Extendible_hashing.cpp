@@ -19,7 +19,7 @@ class bucket{
     {
         v[pointer]=value;
         pointer++;
-//        cout<<value<<" "<<pointer<<endl;
+    //    cout<<value<<" "<<pointer<<endl;
     }
     bool search(int value)
     {
@@ -128,7 +128,7 @@ class Extendible_Hashing
                 v.resize(v.size()*2,NULL);
                 n*=2;
                 global_depth++;
-                local_depth.resize(v.size());
+                local_depth.resize(v.size(),global_depth);
                 vector<int >var;
                 if(v[hash_value])
                 var=v[hash_value]->get_vector();
@@ -235,6 +235,7 @@ class Extendible_Hashing
         {
             if(v[i])
             {
+                // cout<<i<<" ";
                 cout<<v[i]->size();
 //                cout<<endl;
                 vector<int> v1;
